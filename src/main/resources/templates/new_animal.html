@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Animal Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="background: url(chin.jpeg)">
+<div class="container">
+  <h1>New arriving animal</h1>
+  <hr>
+  <h2>Save Animal</h2>
+
+  <form action="#" th:action="@{/saveAnimal}" th:object="${animal}" method="POST">
+    <input type="text" th:field="*{name}" placeholder="Animal name" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{breed}" placeholder="Animal breed" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{age}" placeholder=" Animal age" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{gender}" placeholder=" Animal gender" class="form-control mb-4 col-4">
+
+    <input type="date" th:field="*{arrivedDate}" placeholder=" Animal arriving date" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{medication}" placeholder=" Medication" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{skills}" placeholder=" Cute skills" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2"> Save Animal</button>
+  </form>
+
+  <hr>
+
+  <a th:href="@{/home}"> Back to the animal list</a>
+</div>
+</body>
+
+</html>
